@@ -46,8 +46,9 @@ const recipeSchema = new mongoose.Schema(
       enum: ["Desayuno", "Almuerzo", "Cena", "Merienda", "Cóctel", "Comida rápida", "Ensalada"],
     },
     origin: {
-      type: String,
-      enum: ["Chile", "Perú", "Francia", "España", "Italia", "China", "Egipto"],
+      type: ObjectId,
+      ref: "RecipeOrigin",
+      // enum: ["Chile", "Perú", "Francia", "España", "Italia", "China", "Egipto"],
     },
     preparation: {
       type: String,
