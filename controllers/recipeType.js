@@ -50,3 +50,10 @@ exports.removeSoft = async (req, res) => {
     res.status(400).send("Recipe type delete failed");
   }
 };
+
+exports.typeCount = async (req, res) => {
+  let total = await Type.find({ status: "Active" })
+    .estimatedDocumentCount()
+    .exec();
+  res.json(total);
+};
